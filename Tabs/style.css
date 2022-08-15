@@ -1,0 +1,275 @@
+/* Обнуление */
+
+*,
+*::before,
+*::after {
+   padding: 0;
+   margin: 0;
+   border: 0;
+   box-sizing: border-box;
+}
+a {
+text-decoration: none;
+}
+ul,
+ol,
+li {
+    list-style: none;
+}
+
+img {
+    vertical-align: top;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: inherit;
+    font-size: inherit;
+}
+/* .block-text__title {
+   font-weight: 700;
+   font-size: 36px;
+   line-height: 1.3;
+   color: #4D533C;
+   margin: 0 0px 24px 0;
+}
+.block-text__text {
+   margin: 0 0px 90px 0;
+} */
+html,
+body {
+   height: 100%;
+   font-family: Fira Sans;
+   font-style:normal;
+   font-size: 12px;
+   font-weight: 400;
+   line-height: 1.2;
+   color: #222222
+}
+
+._container {
+   max-width: 1200px;
+   margin: 0 auto;
+   padding: 0 15px;
+   box-sizing: content-box;
+   /* transition: all .3s ease 0s; */
+}
+._ibg {
+   position: relative;
+}
+._ibg img {
+   position: absolute;
+   width: 100%;
+   height: 100%;
+   top: 0;
+   left: 0;
+   object-fit: cover;
+}
+.wrapper {
+   display: flex;
+   flex-direction: column;
+   height: 100%;
+}
+.main {
+   flex: 1 1 100%;
+   position: relative;
+   z-index: 1;
+}
+
+
+/* Header */
+
+.header {
+   position: absolute;
+   width: 100%;
+   left: 0;
+   top: 0;
+   z-index: 200;
+}
+.header__container {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   min-height: 80px;
+}
+
+
+/* Tabs */
+
+.tabs {
+   padding: 185px 0 0 0;
+}
+.tabs__content {
+   flex: 0 0 100%;
+}
+.tabs__container {
+   display: flex;
+   height: 100%;
+}
+.tabs__body {
+   width: 100%;
+   position: relative;
+   padding: 80px 0px 0px 80px;
+   background-color: #3726F2;
+   display: flex;
+   flex-direction: column;
+   align-items: flex-start;
+}
+.menu__item {
+   font-size: 28px;
+   line-height: 1.6;
+   font-weight: 300;
+   color: #fff;
+   transition: all .7s ease 0s;
+}
+.tabs__image {
+   /* overflow: hidden; */
+   display: flex;
+   position: relative;
+   flex: 0 0 100%;
+   padding: 0 0 70% 0;
+
+}
+.tabs__image img {
+   position: absolute;
+   width: 100%;
+   height: 100%;
+   left: 0;
+   top: 0;
+   object-fit: cover;
+   opacity: 0;
+   transition: all .7s ease 0s;
+   max-width: 100%;
+}
+.tabs__info {
+   display: flex;
+   flex-direction: column;
+   position: absolute;
+   right: 20px;
+   bottom: -40%;
+   max-width: 60%;
+   /* max-height: 306px; */
+   background-color: #fff;
+   border-radius: 8px;
+   padding: 25px;
+   z-index: 400;
+   box-shadow: 15px 15px 100px rgba(0, 0, 0, 0.25);
+}
+.info-text {
+}
+.info-text__title {
+   font-size: 20px;
+   font-weight: 600;
+   color: #151515;
+   margin: 0 0 35px 0;
+}
+.info-text__text {
+   font-size: 12;
+   font-weight: 400;
+   margin: 0 0 30px 0;
+}
+.info-text__about {
+}
+.about {
+   display: flex;
+   align-items: center;
+}
+.about__persone {
+   margin: 0 0 0 40px;
+}
+.about__avatar {
+   width: 60px;
+   height: 60px;
+   background-color: #fff;
+   border-radius: 50%;
+   box-shadow: 10px 10px 50px rgba(0, 0, 0, 0.15);
+}
+.about__name {
+   
+}
+.about__post {
+   font-size: 12;
+   font-weight: 400;
+}
+._active {
+   font-weight: 800;
+}
+.tabs__image img._active {
+   opacity: 1;
+}
+
+/* Media */
+
+
+@media (max-width: 870px) {
+   .tabs__content {
+      margin: 0 -15px;
+   }
+}
+
+@media (min-width: 870px) {
+   .tabs {
+      display: flex;
+      flex-direction: row-reverse;
+   }
+   .tabs__body {
+      width: calc(50% - 75px);
+      min-height: 100%;
+   }
+   .tabs__container {
+      justify-content: flex-end;
+   }
+   .tabs__image {
+      position: relative;
+      flex: 0 0 50%;
+      padding: 0 0 30.22% 0;
+      transform: translateX(100%);
+   }
+   .tabs__image img {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      left: 0;
+      top: 0;
+      object-fit: cover;
+      opacity: 0;
+      transition: all .7s ease 0s;
+   }
+   .tabs__info {
+      left: -40px;
+      bottom: -30%;
+   }
+}
+
+@media (max-width: 1600px) {
+   .tabs__info {
+      bottom: -40%; 
+   }
+}
+@media (max-width: 1500px) {
+   .tabs__info {
+      bottom: -50%; 
+   }
+}
+@media (max-width: 1400px) {
+   .tabs__info {
+      bottom: -60%; 
+   }
+}
+
+@media (max-width: 1250px) {
+   .tabs__info {
+      display: none;
+   }
+   .tabs__body {
+      padding: 40px 0px 20px 40px;
+   }
+}
+@media (max-width: 450px) {
+   .tabs {
+      padding: 120px 0 0 0;
+   }
+}
